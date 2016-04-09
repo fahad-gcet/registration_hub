@@ -29,6 +29,7 @@ class RegistersController < ApplicationController
 
     respond_to do |format|
       if @register.save
+        RegisterMailer.register_confirm_email(@register, @event).deliver
         format.html { redirect_to root_path, notice: 'Register was successfully created.' }
         format.json { render :show, status: :created, location: @register }
       else
@@ -70,6 +71,6 @@ class RegistersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_params
-      params.require(:register).permit(:name, :branch, :semester, :event_id)
+      params.require(:register).permit(:name, :branch, :semester, :event_id, :email)
     end
 end
