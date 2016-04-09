@@ -16,4 +16,21 @@
   	<%= link_to "Edit", edit_event_path(@event), class: "btn btn-default" %>
   	<%= link_to "Destroy", @event, :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>  
   </div>
+  
+<% else %>
+  <%= simple_form_for [@event, Register.new]  do |f| %>
+    <div class="field">
+      <%= f.input :name, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.input :branch, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.input :semester, class: "form-control" %>
+    </div>
+    <br>
+    <%= f.submit "Register", class: "btn btn-primary" %>
+  <% end %>
 <% end %>
+
+
