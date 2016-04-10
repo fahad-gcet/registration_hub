@@ -11,6 +11,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @registration_count = @event.registers.count
+    @registers = @event.registers
   end
 
   # GET /events/new

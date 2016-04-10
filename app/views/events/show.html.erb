@@ -17,6 +17,27 @@
   	<%= link_to "Destroy", @event, :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>  
   </div>
   
+  <p>
+    <%= @registration_count %> candidates have registered for this event.
+  </p>
+  
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Branch</th>
+      <th>Semester</th>
+    </tr>
+    <% @registers.each do |register|  %>
+      <tr>
+        <td><%= register.name %></td>
+        <td><%= register.email %></td>
+        <td><%= register.branch %></td>
+        <td><%= register.semester %></td>
+      </tr>
+    <% end %>
+  </table>
+  
 <% else %>
   <%= simple_form_for [@event, Register.new]  do |f| %>
     <div class="field">
