@@ -71,6 +71,6 @@ class RegistersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_params
-      params.require(:register).permit(:name, :branch, :semester, :event_id, :email)
+      params.require(:register).permit(:name, :branch, :semester, :event_id, :email, :mobile_no)
     end
 end
