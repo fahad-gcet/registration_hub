@@ -9,9 +9,7 @@ class RegistersController < ApplicationController
 
   # GET /registers/1
   # GET /registers/1.json
-  def show
-  end
-
+  
   # GET /registers/new
   def new
     @register = Register.new

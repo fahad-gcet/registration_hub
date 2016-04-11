@@ -23,17 +23,25 @@
   
   <table>
     <tr>
+      <th>Serial Number</th>
+      <th>Registeration ID</th>
       <th>Name</th>
       <th>Email</th>
       <th>Branch</th>
       <th>Semester</th>
+      <th>Mobile Number</th>
     </tr>
+    <% @count = 0%>
     <% @registers.each do |register|  %>
       <tr>
+        <% @count = @count + 1 %>
+        <td><%= @count %></td>
+        <td><%= register.id %></td>
         <td><%= register.name %></td>
         <td><%= register.email %></td>
         <td><%= register.branch %></td>
         <td><%= register.semester %></td>
+        <td><%= register.mobile_no %></td>
       </tr>
     <% end %>
   </table>
