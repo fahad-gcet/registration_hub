@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'figaro', '~> 0.7.0'
 
 group :development, :test do
   gem 'byebug'
